@@ -1,16 +1,18 @@
 body {
-  background: #eee;
   text-align: center;
   padding: 0 25px;
   font-family: arial, sans-serif;
 }
+body.mine {
+  background: #D3E5F2;
+}
 
 #main {
-  width: 500px;
+  width: 700px;
   margin: auto;
   text-align: left;
   background: white;
-  padding: 50px 60px;
+  padding: 30px 60px;
   border: solid #ddd;
   border-width: 0 1px 1px 1px;
 }
@@ -59,16 +61,13 @@ form input[type=text] {
   padding: 5px;
 }
 
-.chat {
-  padding: 5px;
-  margin-bottom: 5px;
-  background-color: #eee;
-}
 
 .chat .username {
   font-weight: 800;
 }
-
+.chat .friend {
+  color: blue;
+}
 .chat:hover {
   background-color: #ddd;
 }
@@ -86,11 +85,18 @@ form input[type=text] {
 .reload {
   width: 500px;
   text-align: center;
-  background: white;
-  padding: 20px;
-  margin: 30px auto;
+  padding: 0 20px;
+  margin: auto;
 }
 
 .update {
-  /*max-width: 40px;*/
+  min-width: 80px;
+}
+.talk {
+  margin: 0 30px 5px 0;
+  min-width: 80px;
+}
+
+.roomSelector {
+  margin: 30px auto;
 }

@@ -12,13 +12,27 @@
     <script src="scripts/config.js"></script>
     <script src="scripts/app.js"></script>
   </head>
-  <body>
+  <body class="mine">
     <div id="main">
-      <h1>chatterbox</h1>
-      <!-- Your HTML goes here! -->
+      <h1>Chatterbox</h1>
+      <ul id="messages" class="chat"></ul>
+        <form name="myForm">
+        <input type="text" id="newUser" name="name" placeholder="Username">
+        <input type="text" id="newText" placeholder="Talk to me">
+      </form>
+      <div class="reload">
+        <button class="talk btn btn-small btn-success">Talk</button>
+        <button class="update btn btn-small btn-primary">Update</button>
+      </div>
     </div>
-    <div class="reload">
-      <button class="update btn btn-small btn-primary">Update</button>
+    <div class="roomSelector">
+      <h3>Pick a Room</h3>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default">Left</button>
+        <button type="button" class="btn btn-default">Middle</button>
+        <button type="button" class="btn btn-default">Right</button>
+      </div>
     </div>
   </body>
 </html>
+
