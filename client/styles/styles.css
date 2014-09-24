@@ -3,17 +3,17 @@ body {
   padding: 0 25px;
   font-family: arial, sans-serif;
 }
-body.mine {
-  background: #D3E5F2;
+h3 {
+  text-decoration: underline;
 }
 
 #main {
   width: 700px;
   margin: auto;
   text-align: left;
-  background: white;
+  background-color: #D3E5F2;
   padding: 30px 60px;
-  border: solid #ddd;
+  border: solid #232323;
   border-width: 0 1px 1px 1px;
 }
 
@@ -23,11 +23,9 @@ body.mine {
   margin-bottom: 5px;
   padding: 5px;
 }
-
 #main h1 span {
   font-style:italic;
 }
-
 #main ul {
   padding-left: 20px;
 }
@@ -97,6 +95,24 @@ form input[type=text] {
   min-width: 80px;
 }
 
-.roomSelector {
-  margin: 30px auto;
+.roomSelector, .friendList {
+  margin: 20px 0;
+  background-color: #D3E5F2;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+}
+.rooms {
+  margin-bottom: 30px;
+}
+.newRoomForm {
+  padding: 30px auto;
+}
+#newRoom {
+  max-width: 140px;
+  display: inline;
+}
+
+.contain {
+  width: 700px;
 }

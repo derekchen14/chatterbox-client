@@ -8,31 +8,48 @@
     <!-- dependencies -->
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/backbone/backbone.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
     <!-- your scripts -->
     <script src="scripts/config.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/models/message.js"></script>
+    <script src="scripts/views/friend.js"></script>
+    <script src="scripts/views/room.js"></script>
+    <script src="scripts/views/talk.js"></script>
   </head>
-  <body class="mine">
+  <body>
+
     <div id="main">
       <h1>Chatterbox</h1>
       <ul id="messages" class="chat"></ul>
-        <form name="myForm">
-        <input type="text" id="newUser" name="name" placeholder="Username">
-        <input type="text" id="newText" placeholder="Talk to me">
-      </form>
+      <input type="text" id="newText" placeholder="Talk to me">
       <div class="reload">
         <button class="talk btn btn-small btn-success">Talk</button>
         <button class="update btn btn-small btn-primary">Update</button>
       </div>
     </div>
-    <div class="roomSelector">
+
+    <div class="roomSelector col-sm-7">
       <h3>Pick a Room</h3>
-      <div class="btn-group">
-        <button type="button" class="btn btn-default">Left</button>
-        <button type="button" class="btn btn-default">Middle</button>
-        <button type="button" class="btn btn-default">Right</button>
+      <div class="btn-group rooms">
+        <button type="button" class="btn btn-default dropdown-toggle" id="dropRoom" data-toggle="dropdown">
+          Lobby <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu"><!-- rooms go here --></ul>
+      </div>
+      <div class="form-group newRoomForm">
+        <label for="chatroom">Make new room:</label>
+        <input type="text" class="form-control makeNewRoom" id="newRoom">
+        <button type="button" class="btn btn-small makeRoomButton">Go</button>
       </div>
     </div>
+    <div class="col-sm-1"></div>
+    <div class="friendList col-sm-4">
+      <h3>Friends</h3> <!-- should be in a ng-repeat directive -->
+      <ul class="friends list-group"><!--friends go here --></ul>
+    </div>
+
   </body>
 </html>
 
