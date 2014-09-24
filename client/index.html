@@ -14,32 +14,32 @@
     <script src="scripts/config.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/models/message.js"></script>
-    <script src="scripts/views/friend.js"></script>
     <script src="scripts/views/room.js"></script>
     <script src="scripts/views/talk.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </head>
   <body>
 
     <div id="main">
       <h1>Chatterbox</h1>
       <ul id="messages" class="chat"></ul>
-      <input type="text" id="newText" placeholder="Talk to me">
       <div class="reload">
+        <input type="text" id="newText" placeholder="Talk to me">
         <button class="talk btn btn-small btn-success">Talk</button>
-        <button class="update btn btn-small btn-primary">Update</button>
+        <!-- <button class="update btn btn-small btn-primary">Update</button> -->
       </div>
     </div>
 
     <div class="roomSelector col-sm-7">
       <h3>Pick a Room</h3>
-      <div class="btn-group rooms">
-        <button type="button" class="btn btn-default dropdown-toggle" id="dropRoom" data-toggle="dropdown">
+      <div class="dropdown dropup rooms">
+        <button class="btn btn-default dropdown-toggle" type="button"  id="dropRoom" data-toggle="dropdown">
           Lobby <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu"><!-- rooms go here --></ul>
       </div>
       <div class="form-group newRoomForm">
-        <label for="chatroom">Make new room:</label>
+        <label for="room">Make new room:</label>
         <input type="text" class="form-control makeNewRoom" id="newRoom">
         <button type="button" class="btn btn-small makeRoomButton">Go</button>
       </div>

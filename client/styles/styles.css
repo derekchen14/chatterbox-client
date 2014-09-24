@@ -60,11 +60,18 @@ form input[type=text] {
 }
 
 
-.chat .username {
-  font-weight: 800;
+#newText {
+  margin-right: 10px;
+  padding: 3px;
+  float: left;
+  min-width: 15em;
 }
-.chat .friend {
-  color: blue;
+
+.username {
+  font-weight: 400;
+}
+.friend > .username {
+  font-weight: 800;
 }
 .chat:hover {
   background-color: #ddd;
@@ -75,7 +82,6 @@ form input[type=text] {
   height: 46px;
   margin-bottom: 5px;
 }
-
 .spinner img {
   padding: 10px;
 }
@@ -84,7 +90,7 @@ form input[type=text] {
   width: 500px;
   text-align: center;
   padding: 0 20px;
-  margin: auto;
+  margin: 40px auto 0 0;
 }
 
 .update {
@@ -115,4 +121,7 @@ form input[type=text] {
 
 .contain {
   width: 700px;
+}
+.rroom {
+  color: red;
 }

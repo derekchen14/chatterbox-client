@@ -25,7 +25,7 @@ $(function() {
       createNewRoom();
     }
   });
-  $('roomSelector').on('click', '.room-item', function(e) {
+  $('.roomSelector').on('click', '.room-item', function(e) {
     e.preventDefault();
     makeActive($(this).text());
   });

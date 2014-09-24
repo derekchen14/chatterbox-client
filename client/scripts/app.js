@@ -69,19 +69,24 @@ var app = {
         app.displayMessage(message);
       }
     }
+    app.attachListeners();
   },
   displayMessage: function(message) {
     $(message.template()).appendTo($('ul#messages'));
     app.displayRoom()
   },
-  displayRoom: function() {
+  displayRoom: function(loaded) {
     for(var key in app.allMessages) {
       var message = app.allMessages[key];
+      if(loaded) console.table('mess: ', message);
 
       if(message.fromFriend()) {
         $('#'+key).addClass('friend');
+      } else {
+        $('#'+key).removeClass('friend');
       }
-      if (message.chatroom === app.activeRoom) {
+      // console.log('active: ', app.activeRoom,' messag: ', message.room, ' key:', key);
+      if (message.room === app.activeRoom) {
         $('#'+key).removeClass('hidden');
       } else {
         $('#'+key).addClass('hidden');
@@ -99,6 +104,14 @@ var app = {
       }
     }
   },
+  attachListeners: function() {
+    $('.username').click(function(event) {
+      event.preventDefault();
+      app.allFriends[$(this).text()] = !app.allFriends[$(this).text()];
+      app.displayRoom(true);
+      app.displayFriendList();
+    });
+  },
 
   // HELPER FUNCTIONS
   isDuplicate: function(data, i) {
@@ -113,6 +126,11 @@ var app = {
     return false;
   },
   sanitize: function(text, type) {
+    if (text === undefined) {
+      if (type === 'text') return "[ -- Empty message -- ]";
+      if (type === 'user') return "Anonymous";
+      if (type === 'room') return "Lobby";
+    }
     var regex = /^[\w .,!?]+$/;
     if(regex.test(text)) {
       return text;
